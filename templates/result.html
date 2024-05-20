@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Data for {{ name }}</title>
+</head>
+<body>
+    <h1>Weather Data for Station {{ name }}</h1>
+    <div>
+        {{ data|safe }}  <!-- |safe filter ensures HTML is rendered correctly -->
+    </div>
+    <div>
+        <!-- Debug section to ensure data is passed -->
+        <h2>Debug Info</h2>
+        <p>Data: {{ data }}</p>
+    </div>
+</body>
+</html>
