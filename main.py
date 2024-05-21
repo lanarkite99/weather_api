@@ -33,10 +33,10 @@ def station_data(station):
 def year_wise(station,year):
     filepath = "data_small/TG_STAID" + str(station).zfill(6) + ".txt"
     df = pd.read_csv(filepath, skiprows=20, parse_dates=["    DATE"])
-    # Extract the year as a new column
+    # Extract year as new col
     df['Year'] = df['    DATE'].dt.year
 
-    # Filter the DataFrame based on the year
+    # Filter DF based on year
     year_wise_data = df[df['Year'] == int(year)]
     return render_template("result.html",
                            name=station, data=year_wise_data.to_html())
